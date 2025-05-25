@@ -51,8 +51,8 @@ export default function App() {
       let lastResponse;
       while (true) {
         const url =
-          'https://geoserver.danielmyers.xyz/geoserver/ows?service=WFS&version=2.0.0' +
-          '&request=GetFeature&typeNames=sf_311:castro_311' +
+          'https://geoserver.danielmyers.xyz/geoserver/census/ows?service=WFS&version=2.0.0' +
+          '&request=GetFeature&typeNames=census:castro_311' +
           '&outputFormat=application/json' +
           `&count=${pageSize}` +
           `&startIndex=${startIndex}`;
