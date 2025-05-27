@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import 'leaflet/dist/leaflet.css';
+import './styles.css';
 import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import proj4 from 'proj4';
@@ -96,14 +98,8 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      <div style={{
-        width: 300,
-        padding: 16,
-        background: '#fff',
-        borderRight: '1px solid #ddd',
-        overflowY: 'auto'
-      }}>
+    <div className="dashboard-container">
+      <aside className="sidebar">
         <h2>311 Dashboard</h2>
         <p style={{ fontSize: '12px', color: '#666', marginTop: 0 }}>Data updates daily.</p>
         <p><strong>Total Cases:</strong> {stats.total}</p>
@@ -134,8 +130,13 @@ export default function App() {
             </li>
           ))}
         </ul>
-      </div>
-      <MapContainer style={{ flex: 1 }} center={[37.75, -122.45]} zoom={12}>
+      </aside>
+      <div className="map-container">
+      <MapContainer
+        center={[37.75, -122.45]}
+        zoom={12}
+        style={{ width: '100%', height: '100%' }}
+      >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {data && (
           <>
@@ -167,6 +168,7 @@ export default function App() {
           </>
         )}
       </MapContainer>
+      </div>
     </div>
   );
 }
