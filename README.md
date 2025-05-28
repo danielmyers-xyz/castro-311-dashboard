@@ -98,6 +98,8 @@ Layer `castro_311` from:
 
 [https://geoserver.danielmyers.xyz/geoserver/census/castro_311/ows?service=WFS&request=GetFeature&version=2.0.0&outputFormat=application/json](https://geoserver.danielmyers.xyz/geoserver/census/castro_311/ows?service=WFS&request=GetFeature&version=2.0.0&outputFormat=application/json)
 
+This layer is generated and published by the [ETL pipeline here](https://github.com/danielmyers-xyz/castro-dashboard-etl).
+
 ## 📈 Usage
 
 - Pan and zoom the map to explore service requests  
